@@ -5,3 +5,5 @@ php-cli
 php-imap
 php-xml
 php-curl
+php-gd
+php-zip
