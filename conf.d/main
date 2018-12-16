@@ -114,6 +114,9 @@ NEW_HTML="\$html\[\"signature\"\] = \'<div style=\"clear: both; font-family: ari
 sed -i "s|$OLD_TEXT|$NEW_TEXT|" $WEBROOT/admin/sendemaillib.php
 sed -i "s|$OLD_HTML|$NEW_HTML|" $WEBROOT/admin/sendemaillib.php
 
+# set default ckeditor path correctly
+$MYSQL_BATCH --execute "INSERT INTO phplist.config (item, value, editable, type) VALUES ('kcfinder_path', 'plugins/CKEditorPlugin/kcfinder','1',NULL)"
+
 # stop services
 service mysql stop
 service apache2 stop
