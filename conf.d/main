@@ -42,8 +42,21 @@ cat >$PHPLIST_PLUGINS/README.txt<<EOF
 Create your own pages to slot into PHPlist, or do certain things are are more
 specific to your situation.
 
-For reference, see: $WEBROOT/admin/plugins
+Default plugins found here are symlinks to $WEBROOT/admin/plugins
+
+Note: To enable uploading of files (images etc) by ckeditor create the dir like this:
+
+    mkdir -p $WEBROOT/uploadimages
+    chown -R www-data:www-data $WEBROOT/uploadimages
 EOF
+
+# grant ownership to webserver (support installing plugins from webUI)
+chown -R www-data:www-data $PHPLIST_PLUGINS
+
+# symlink default plugins so they work OOTB
+for plugin in $WEBROOT/admin/plugins/*; do
+    ln -s $plugin $PHPLIST_PLUGINS/$(basename $plugin)
+done
 
 # configure apache
 a2dissite 000-default
