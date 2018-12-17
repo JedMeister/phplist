@@ -13,7 +13,7 @@ SRC=/usr/local/src
 WEBROOT=/var/www/phplist
 
 # unpack
-tar -zxf $SRC/phplist-*.tgz -C $SRC
+unzip $SRC/phplist-*.zip -d $SRC
 mv $SRC/phplist-*/public_html/lists $WEBROOT
 mkdir $WEBROOT/docs
 mv $SRC/phplist-*/README* $WEBROOT/docs/
