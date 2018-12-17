@@ -1,3 +1,23 @@
+turnkey-phplist-15.2 (1) turnkey; urgency=low
+
+  * Updated phpList to v3.3.7.
+
+  * Configure conf scripts to always download and install latest version of
+    phpList.
+
+  * Bugfix/improvements - especially for CKEditor plugin, but plugins in
+    general - closes #1278:
+
+    - fix default kcfinder_path so CKEditor plugin works properly.
+    - install additional dependencies (php-gd & php-zip) to support use of
+      plugins.
+    - set ownership of phplist-plugin directory to webserver (www-data).
+    - create symlinks to default/example plugins so they work OOTB.
+    - update Apache conf to included phplist-plugins dir.
+    - disable Apache indexes (in Apache conf).
+
+ -- Jeremy Davis <jeremy@turnkeylinux>  Mon, 17 Dec 2018 11:39:16 +1100
+
 turnkey-phplist-15.1 (1) turnkey; urgency=low
 
   * Updated phpList to v3.3.6.
