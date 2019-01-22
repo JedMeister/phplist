@@ -85,7 +85,7 @@ sed -i "s|^\$database_password.*|\$database_password = \'$DB_PASS\';|" $CONFIG
 sed -i "s|^\$installation_name.*|\$installation_name = \'TurnKey PHPlist\';|" $CONFIG
 sed -i "s|^\$table_prefix.*|\$table_prefix = \"\";|" $CONFIG
 sed -i "s|^\$usertable_prefix.*|\$usertable_prefix = \"\";|" $CONFIG
-sed -i "s|^\$pageroot.*|\$pageroot = \'/\';|" $CONFIG
+sed -i "s|^\$pageroot.*|\$pageroot = \'\';|" $CONFIG
 sed -i "s|^\$adminpages.*|\$adminpages = \'/admin\';|" $CONFIG
 sed -i "s|NOSTATSCOLLECTION.*|NOSTATSCOLLECTION\', 1);|" $CONFIG
 sed -i "s|^define('PHPMAILERHOST'.*|define('PHPMAILERHOST', 'localhost');|" $CONFIG
