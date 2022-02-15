@@ -7,7 +7,12 @@ dl() {
 }
 
 # Always download latest version
-URL="https://sourceforge.net/projects/phplist/files/latest/download"
+#URL="https://sourceforge.net/projects/phplist/files/latest/download"
+
+# we have to download 3.6.7 explicitly as the sourceforge latest hasn't been
+# updated for a while and installs an older RC
+
+URL="https://sourceforge.net/projects/phplist/files/phplist/3.6.7/phplist-3.6.7.zip/download"
 
 dl $URL /usr/local/src
 
