@@ -11,10 +11,10 @@ Option:
 import re
 import sys
 import getopt
-import inithooks_cache
+from libinithooks import inithooks_cache
 
 
-from dialog_wrapper import Dialog
+from libinithooks.dialog_wrapper import Dialog
 from mysqlconf import MySQL
 
 def usage(s=None):
