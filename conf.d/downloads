@@ -6,13 +6,9 @@ dl() {
     cd $2; curl -L -f -J -O $PROXY $1; cd -
 }
 
-# Always download latest version
-#URL="https://sourceforge.net/projects/phplist/files/latest/download"
-
-# we have to download 3.6.7 explicitly as the sourceforge latest hasn't been
-# updated for a while and installs an older RC
-
-URL="https://sourceforge.net/projects/phplist/files/phplist/3.6.7/phplist-3.6.7.zip/download"
+# Pull download link for latest version from downloads page
+URL=$(curl https://www.phplist.org/download-phplist/ \
+        | sed -En '\|Download ZIP|s|^.* href="(http[a-z0-9\.:/-]+)">.*$|\1|p')
 
 dl $URL /usr/local/src
 
